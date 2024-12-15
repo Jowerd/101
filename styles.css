@@ -1,0 +1,256 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    color: #333;
+    background-color: #f4f4f4;
+    height: 100%; /* საჭიროა მთლიანი სიმაღლისთვის */
+    display: flex; /* flexbox განლაგება */
+    flex-direction: column; /* განლაგება სვეტებად */
+    box-sizing: border-box; /* box-sizing მორგებული ელემენტებისთვის */
+}
+
+header {
+    background: #333333;
+    color: #ffffff;
+    padding: 10px;
+    text-align: center;
+}
+
+
+/* Basic styling for the navbar */
+.navbar {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center; /* Keeps the navbar centered on all screen sizes */
+    background: #4d4d4d;
+    margin: 0;
+    width: 100%;
+}
+
+/* Navbar list items */
+.navbar li {
+    margin: 0;
+    position: relative;
+}
+
+/* Navbar links */
+.navbar a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 12px 20px;
+    display: block;
+    background-color: #4d4d4d;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease, letter-spacing 0.3s ease;
+}
+
+/* Horizontal white border between buttons */
+.navbar li:not(:last-child) a {
+    border-right: 2px solid #fff;
+}
+
+/* Hover effect for navbar links */
+.navbar a:hover {
+    background-color: #005f99;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+    transform: translateY(-3px);
+    letter-spacing: 2px;
+}
+
+/* Active link */
+.navbar a.active {
+    background-color: #004080;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Dropdown Styles */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #fff;
+    min-width: 200px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    z-index: 1;
+    border-radius: 8px;
+    margin-top: 1px;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    font-size: 15px;
+    max-height: 250px;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+/* Dropdown scrollbar styles */
+.dropdown-content::-webkit-scrollbar {
+    width: 6px;
+}
+
+.dropdown-content::-webkit-scrollbar-thumb {
+    background-color: #bbb;
+    border-radius: 10px;
+}
+
+.dropdown-content::-webkit-scrollbar-thumb:hover {
+    background-color: #888;
+}
+
+/* Dropdown links */
+.dropdown-content a {
+    color: #ffffff;
+    padding: 12px 20px;
+    text-decoration: none;
+    display: block;
+    border-bottom: 1px solid #ddd;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+/* Last child link in dropdown */
+.dropdown-content a:last-child {
+    border-bottom: none;
+}
+
+/* Hover effect for dropdown links */
+.dropdown-content a:hover {
+    background-color: #333333;
+    transform: translateX(5px);
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Hover Effect for Dropdown */
+.dropdown:hover .dropdown-content {
+    display: block;
+    opacity: 1;
+}
+
+/* Styling for empty vacancies */
+.no-vacancies {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    text-align: center;
+    font-size: 36px;
+    color: rgba(51, 51, 51, 0.6);
+    background-color: #f8f8f8;
+}
+
+.no-vacancies h2 {
+    margin: 0;
+    font-weight: bold;
+}
+
+main {
+    flex-grow: 1;
+    padding: 20px;
+}
+
+/* Button Style for Details */
+.btn-details {
+    display: inline-block;
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 10px;
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover Effect */
+.btn-details:hover {
+    background-color: #45a049;
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+#search {
+    margin: 20px 0;
+    text-align: center;
+}
+
+#searchBox {
+    width: 80%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.job-item {
+    background: #fff;
+    padding: 15px;
+    margin: 15px 0;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+footer {
+    background: #333333;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+}
+
+.footer-content {
+    margin: 0;
+}
+
+@media (max-width: 768px) {
+    /* Navbar adjustments for compact horizontal layout */
+    .navbar {
+        flex-direction: row; /* Keep items in a row */
+        justify-content: center; /* Center items */
+        flex-wrap: nowrap; /* Prevent wrapping */
+    }
+
+    .navbar li {
+        margin: 0; /* Remove margins to keep buttons close */
+        padding: 0; /* Optional: ensure no extra spacing */
+        flex: 0; /* Prevent items from stretching */
+    }
+
+    .navbar a {
+        padding: 10px 15px; /* Adjust padding for closer buttons */
+        font-size: 14px; /* Slightly smaller font size for mobile */
+        white-space: nowrap; /* Prevent text wrapping inside buttons */
+        text-align: center; /* Center text */
+    }
+
+    /* Dropdown adjustments for mobile */
+    .dropdown-content {
+        position: absolute; /* Ensure dropdown appears as overlay */
+        top: 100%; /* Align below parent item */
+        left: 0; /* Align dropdown with parent */
+        width: auto; /* Dynamic width */
+        z-index: 1000; /* Ensure it's above other elements */
+        border-radius: 5px; /* Rounded corners for a cleaner look */
+    }
+
+    /* Dropdown links styling */
+    .dropdown-content a {
+        font-size: 14px; /* Consistent font size */
+        padding: 10px 15px; /* Compact padding */
+    }
+}
+
+
+
+
+
+/* Media query for larger screens */
+@media (min-width: 1024px) {
+    /* Larger screen adjustments can be added here */
+}
